@@ -1,0 +1,43 @@
+{
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceFolder}/../build/${buildType}",
+    "cmake.parallelJobs": 2,
+    // Extra paths don't solve all problems, you should install fake-bpy-module and missing packages like numpy and so on
+    // preferabblly in a virtual Python environment
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/release/scripts/modules",
+        "${workspaceFolder}/release/scripts/addons"
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/release/scripts/modules",
+        "${workspaceFolder}/release/scripts/addons",
+    ],
+    "python.analysis.diagnosticMode": "workspace", // Diagnose all files in workspace even if they are not open
+    "python.analysis.diagnosticSeverityOverrides": {
+        // "reportUndefinedVariable": "none",
+        "reportMissingImports": "none"
+    },
+    "python.defaultInterpreterPath": "${workspaceFolder}/../env310",
+    // Note that ignorePatterns won't ignore file if it is open
+    // use pyrightconfig.json instead
+    "python.linting.ignorePatterns": [
+        "**/site-packages/**/*.py",
+        ".vscode/*.py",
+        "extern/mantaflow/preprocessed/python/defines.py"
+    ],
+    "explicitFolding.rules": {
+        "c": {
+            "begin": "\\{",
+            "end": "\\}"
+        }
+    },
+    "C_Cpp.errorSquiggles": "Disabled",
+    // "C_Cpp.codeAnalysis.exclude": {
+    //     "source/blender/nodes/NOD_static_types.h": true
+    // },
+    // "C_Cpp.exclusionPolicy": "checkFilesAndFolders",
+    // "C_Cpp.files.exclude": {
+    //     "source/blender/nodes/NOD_static_types.h": true,
+    //     "**/.vscode": true
+    // },
+}

@@ -1,0 +1,7 @@
+{
+    "ignore": [
+        "extern/mantaflow/preprocessed/python/defines.py",
+        "doc/python_api/examples/*.py",
+        "doc/python_api/*.py",
+    ]
+}
